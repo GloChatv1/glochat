@@ -2,7 +2,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/GloChatv1/glochat1
+   git clone https://github.com/GloChatv1/glochat
    ```
 3. Install NPM packages
    ```sh
