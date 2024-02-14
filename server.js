@@ -23,11 +23,11 @@ app.use((req, res) => {
 let messages = [];
 
 io.on('connection', (socket) => {
-    console.log('New client connected');
-    
     // Assign a unique ID to the user and store it in the users object
     const userId = socket.id;
     users[userId] = userId;
+
+    console.log(`${new Date().toLocaleTimeString()} connected ${userId}`);
     
     socket.emit('chat history', messages);
 
@@ -36,11 +36,12 @@ io.on('connection', (socket) => {
         const messageWithTimestamp = `<div class="message"><div class="user-id">${userId}</div><div class="message-content"><span class="timestamp">${timestamp}</span><span class="message-text">${msg}</span></div></div>`; // Include user ID
         messages.push(messageWithTimestamp);
         io.emit('chat message', messageWithTimestamp);
+        console.log(`${timestamp} message ${userId} : \"${msg}\"`);
     });
     
 
     socket.on('disconnect', () => {
-        console.log('Client disconnected');
+        console.log(`${new Date().toLocaleTimeString()} disconnected ${userId}`);
         // Remove user from users object on disconnect
         delete users[userId];
     });
