@@ -3,8 +3,8 @@
 
 ### Prerequisites
 
-node
-npm
+1. node
+2. npm
 
 ### Installation
 
