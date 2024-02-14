@@ -16,6 +16,7 @@
 
             socket.on('chat message', (msg) => {
                 messages.innerHTML += '<br>' + msg;
+                scrollToBottom();
             });
 
             messageForm.addEventListener('submit', (e) => {
