@@ -16,5 +16,8 @@
    ```sh
    http://localhost:3000
    ```
+   or
+   ```sh
+   http://192.168.x.x:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
