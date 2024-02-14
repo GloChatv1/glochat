@@ -1,11 +1,3 @@
-<!-- GETTING STARTED -->
-## Getting Started
-
-### Prerequisites
-
-1. node
-2. npm
-
 ### Installation
 
 1. Clone the repo
