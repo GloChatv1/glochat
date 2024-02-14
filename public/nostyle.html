@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GloChat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io();
+            const messageForm = document.getElementById('messageForm');
+            const messageInput = document.getElementById('messageInput');
+            const messages = document.getElementById('messages');
+
+            socket.on('chat history', (chatHistory) => {
+                messages.innerHTML = chatHistory.join('<br>');
+            });
+
+            socket.on('chat message', (msg) => {
+                messages.innerHTML += '<br>' + msg;
+            });
+
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                socket.emit('chat message', messageInput.value);
+                messageInput.value = '';
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">GloChat</div>
+        <div class="chat-messages" id="messages"></div>
+        <form class="chat-form" id="messageForm">
+            <input type="text" id="messageInput" autocomplete="off" placeholder="Type your message here" />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
