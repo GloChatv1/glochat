@@ -13,7 +13,7 @@
    node server.js
    ```
 5. Visit the site
-   ````sh
+   ```sh
    http://localhost:3000
    ```
 
