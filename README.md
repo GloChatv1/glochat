@@ -14,8 +14,7 @@
    ```
 5. Visit the site
    ```sh
-   http://localhost:3000
-   ```
+   http://localhost:3000```
    or
    ```sh
    http://192.168.x.x:3000
