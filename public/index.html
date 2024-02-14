@@ -12,8 +12,10 @@
         <div class="chat-messages" id="messages"></div>
         <form class="chat-form" id="messageForm">
             <input type="text" id="messageInput" autocomplete="off" placeholder="Type your message here" />
-            <button type="submit">Send</button>
-        </form>
+            <label for="imageInput" id="imageInputLabel">Select Image</label>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            <button type="submit" id="sendMessageButton">Send</button>
+        </form>            
     </div>
 </body>
 </html>
