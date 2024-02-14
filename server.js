@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
     const userId = socket.id;
     users[userId] = userId;
 
-    console.log(`${new Date().toLocaleTimeString()} connected ${userId}`);
+    console.log(`${new Date().toLocaleTimeString()} connect ${userId}`);
     
     // Emit 'user connected' event when a user connects
     io.emit('chat message', `<span class="user-connect">${userId} has connected</span>`);
@@ -68,7 +68,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        console.log(`${new Date().toLocaleTimeString()} disconnected ${userId}`);
+        console.log(`${new Date().toLocaleTimeString()} disconnect ${userId}`);
         // Remove user from users object on disconnect
         delete users[userId];
         // Emit 'user disconnected' event when a user disconnects
