@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+p {
+    color: red;
+    font-weight: bold;
+}
+
 /* Body styles */
 body {
     font-family: Arial, sans-serif;

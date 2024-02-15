@@ -49,6 +49,10 @@ io.on('connection', (socket) => {
     socket.on('chat message', (msg) => {
         const timestamp = new Date().toLocaleTimeString(); // Get current time
         const displayName = userDisplayNames[userIP]; // Get the display name for the user ID
+        if (msg.includes('<')){
+            console.log(`${timestamp} illegal ${displayName} : ${msg}`);
+            msg = '</span><p>Illegal character detected</p>'
+        }
         const messageWithTimestamp = `<div class="message">
             <div class="user-info">
                 <div class="user-id">${displayName}</div>
@@ -61,7 +65,7 @@ io.on('connection', (socket) => {
 
         messages.push(messageWithTimestamp);
         io.emit('chat message', messageWithTimestamp);
-        console.log(`${timestamp} message ${displayName} : \"${msg}\"`);
+        console.log(`${timestamp} message ${displayName} : ${msg}`);
     });
     
 
