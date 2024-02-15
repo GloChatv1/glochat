@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
         const displayName = userDisplayNames[userIP];
         if (dataUrl.includes('<')){
             console.log(`${timestamp} illegal-image ${displayName} : ${dataUrl}`);
-            dataUrl = '" /> <p>Illegal character detected<class"xss'
+            dataUrl = '"/><p>Illegal character detected<class"xss'
         }
         const imageMessageWithTimestamp = `<div class="message">
     <div class="user-info">
@@ -83,7 +83,7 @@ io.on('connection', (socket) => {
         <div class="timestamp">${timestamp}</div>
     </div>
     <div class="message-content">
-        <img class="message-image src="${dataUrl}" />
+        <img class="message-image" src="${dataUrl}" />
     </div>
 </div>`;
         messages.push(imageMessageWithTimestamp);
