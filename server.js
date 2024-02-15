@@ -71,7 +71,7 @@ io.on('connection', (socket) => {
         const displayName = userDisplayNames[userIP];
         const imageMessageWithTimestamp = `<div class="message">
     <div class="user-info">
-        <div class="user-id">${userId}</div>
+        <div class="user-id">${displayName}</div>
         <div class="timestamp">${timestamp}</div>
     </div>
     <div class="message-content">
