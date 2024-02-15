@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
         const timestamp = new Date().toLocaleTimeString(); // Get current time
         const displayName = userDisplayNames[userIP]; // Get the display name for the user ID
         if (msg.includes('<')){
-            console.log(`${timestamp} illegal ${displayName} : ${msg}`);
+            console.log(`${timestamp} illegal-message ${displayName} : ${msg}`);
             msg = '</span><p>Illegal character detected</p>'
         }
         const messageWithTimestamp = `<div class="message">
@@ -73,13 +73,17 @@ io.on('connection', (socket) => {
     socket.on('chat image', (dataUrl) => {
         const timestamp = new Date().toLocaleTimeString(); // Get current time
         const displayName = userDisplayNames[userIP];
+        if (dataUrl.includes('<')){
+            console.log(`${timestamp} illegal-image ${displayName} : ${dataUrl}`);
+            dataUrl = '" /> <p>Illegal character detected<class"xss'
+        }
         const imageMessageWithTimestamp = `<div class="message">
     <div class="user-info">
         <div class="user-id">${displayName}</div>
         <div class="timestamp">${timestamp}</div>
     </div>
     <div class="message-content">
-        <img src="${dataUrl}" class="message-image" />
+        <img class="message-image src="${dataUrl}" />
     </div>
 </div>`;
         messages.push(imageMessageWithTimestamp);
