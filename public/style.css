@@ -8,7 +8,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #36393f;
 }
 
 body, html {
@@ -20,17 +20,18 @@ body, html {
 /* Chat container styles */
 .chat-container {
     width: 100%; /* Stretch the chat container to the entire width */
-    background-color: #fff;
-    height: 80%;
-    max-height: 80%;
+    background-color: #36393f;
+    height: 99.5%;
+    max-height: 99.5%;
 }
 
 /* Chat header styles */
 .chat-header {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #2f3136;
+    color: #a4a1a1;
     font-weight: bold;
-    text-align: center;
+    font-size: small;
+    padding: 0.5%;
 }
 
 /* Chat messages styles */
@@ -44,12 +45,12 @@ body, html {
 /* Message styles */
 .message {
     margin-bottom: 15px;
-    border-radius: 20px;
+    border-radius: 8px;
     max-width: 80%;
 }
 
 .user-message {
-    background-color: #2196F3;
+    background-color: #7289da;
     color: #fff;
     padding: 10px 15px;
     border-bottom-right-radius: 5px;
@@ -60,27 +61,29 @@ body, html {
 .user-id {
     font-size: small;
     font-weight: bold;
-    color: #555;
+    color: #b9bbbe;
     margin-right: 10px;
 }
 
 /* Timestamp styles */
 .timestamp {
     font-size: smaller;
-    color: #888;
+    color: #b9bbbe;
     margin-right: 5px;
 }
 
 /* Message text styles */
 .message-text {
     font-family: Arial, sans-serif;
+    color: white;
+    font-size: x-large;
 }
 
 /* Style for user connection and disconnection messages */
 .user-connect,
 .user-disconnect {
     font-weight: bold;
-    color: #888;
+    color: #b9bbbe;
     font-style: italic;
 }
 
@@ -89,7 +92,7 @@ body, html {
     display: flex;
     align-items: center;
     padding: 15px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #4f545c;
     width: 100%; /* Stretch the chat form to the entire width */
 }
 
@@ -98,17 +101,19 @@ body, html {
     flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-right: 10px;
     outline: none;
+    background-color: #40444b;
+    color: #dcddde;
 }
 
 /* Button styles */
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #7289da;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: medium;
     color: #fff;
     cursor: pointer;
@@ -117,21 +122,21 @@ button {
 
 /* Hover styles for buttons */
 button:hover, #sendImageButton:hover {
-    background-color: #45a049;
+    background-color: #677bc4;
 }
 
 /* Style for image messages */
 .message-image {
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 /* Modify the CSS for the "Select Image" button */
 #imageInputLabel {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #7289da;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -140,7 +145,7 @@ button:hover, #sendImageButton:hover {
 }
 
 #imageInputLabel:hover {
-    background-color: #45a049;
+    background-color: #677bc4;
 }
 
 #imageInput {
