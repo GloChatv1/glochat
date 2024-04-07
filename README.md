@@ -65,7 +65,7 @@ This section provides an explanation of all the admin commands available in the 
    - **Example:** `<anon Hello, it's a secret!`
 
 9. **`ban`**
-   - **Description:** Bans a user from the chat.
+   - **Description:** Bans a user from sending messages or images into the chat.
    - **Usage:** `<ban username`
    - **Example:** `<ban JohnDoe`
 
