@@ -47,22 +47,22 @@ This section provides an explanation of all the admin commands available in the 
 5. **`msg`**
    - **Description:** Sends a message with a specified color.
    - **Usage:** `<msg color message`
-   - **Example:** `<msg red Hello, everyone!`
+   - **Example:** `<msg red "Hello, everyone!"`
 
 6. **`msgas`**
    - **Description:** Sends a message as another user with a specified color.
    - **Usage:** `<msgas username color message`
-   - **Example:** `<msgas JohnDoe aquamarine Hello from admin!`
+   - **Example:** `<msgas JohnDoe aquamarine "Hello from admin!"`
 
 7. **`as`**
    - **Description:** Sends a message as another user.
    - **Usage:** `<as username message`
-   - **Example:** `<as JohnDoe Hello from JohnDoe!`
+   - **Example:** `<as JohnDoe "Hello from JohnDoe!"`
 
 8. **`anon`**
    - **Description:** Sends a message anonymously.
    - **Usage:** `<anon message`
-   - **Example:** `<anon Hello, it's a secret!`
+   - **Example:** `<anon "Hello, it's a secret!"`
 
 9. **`ban`**
    - **Description:** Bans a user from sending messages or images into the chat.
@@ -77,7 +77,7 @@ This section provides an explanation of all the admin commands available in the 
 11. **`msganon`**
     - **Description:** Sends an anonymous message with a specified color.
     - **Usage:** `<msganon color message`
-    - **Example:** `<msganon aquamarine This is a secret message!`
+    - **Example:** `<msganon aquamarine "This is a secret message!"`
 
 These commands are essential for managing user interactions and maintaining control over the GloChat environment.
 
