@@ -59,20 +59,19 @@ io.on('connection', (socket) => {
         }
         if (msg.startsWith('<')){
             if (displayName.startsWith('[ADMIN] ')){
+                let args = msg.match(/(?:[^\s"]+|"[^"]*")/g).map(arg => arg.replace(/^"(.*)"$/, '$1'));
                 if (msg == '<list'){
                     for (let user in userDisplayNames) {
                         console.log(`${user} ${userDisplayNames[user]}`);
                     }
                 }
                 else if (msg.startsWith('<give-admin ')){
-                    let args = msg.split(" ");
                     let argument = args[1];
                     let userName = userDisplayNames[argument];
                     userDisplayNames[argument] = "[ADMIN] " + userName;
                     sendMsgSpan(displayName, `Admin status added to ${userName}`, timestamp, 'aquamarine')
                 }
                 else if (msg.startsWith('<remove-admin ')){
-                    let args = msg.split(" ");
                     let argument = args[1];
                     let userName = userDisplayNames[argument];
                     if (userName.startsWith("[ADMIN] ")) {
@@ -85,29 +84,23 @@ io.on('connection', (socket) => {
                     sendMsgSpan(displayName, 'Message History Cleared', timestamp, 'sendMsgSpan(displayName, `aquamarine');
                 }
                 else if (msg.startsWith('<msg ')){
-                    let args = msg.split(" ");
                     sendMsgSpan(displayName, args[2], timestamp, args[1]);
                 }
                 else if (msg.startsWith('<msgas ')){
-                    let args = msg.split(" ");
                     sendMsgSpan(args[1], args[3], timestamp, args[2]);
                 }
                 else if (msg.startsWith('<as ')){
-                    let args = msg.split(" ");
                     sendMsg(args[1], args[2], timestamp);
                 }
                 else if (msg.startsWith('<anon ')){
-                    let args = msg.split(" ");
                     sendMsg('[Anonymous]', args[1], timestamp);
                 }
                 else if (msg.startsWith('<ban ')){
-                    let args = msg.split(" ");
                     let user = args[1];
                     banned.push(user);
                     sendMsgSpan('[System]', `${user} was banned`, timestamp, 'red');
                 }
                 else if (msg.startsWith('<unban ')){
-                    let args = msg.split(" ");
                     let user = args[1];
                     let index = banned.indexOf(user);
                     if (index !== -1) {
@@ -116,7 +109,6 @@ io.on('connection', (socket) => {
                     }
                 }
                 else if (msg.startsWith('<msganon ')){
-                    let args = msg.split(" ");
                     sendMsgSpan('[Anonymous]', args[2], timestamp, args[1]);
                 }
             }
